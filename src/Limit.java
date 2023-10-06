@@ -1,6 +1,6 @@
 import java.util.concurrent.Semaphore;
 
-public class BadGirl extends Thread implements Runnable {
+public class BadGir extends Thread implements Runnable {
     Account owner;
     Semaphore m;
     String oplata;
