@@ -1,11 +1,11 @@
 import java.util.concurrent.Semaphore;
 
-public class GoodGuy extends Thread implements Runnable {
-    Account lovely;
+public class Add extends Thread implements Runnable {
+    Account account;
     Semaphore m;
 
-    public GoodGuy(Account lovely, Semaphore m) {
-        this.lovely = lovely;
+    public Add(Account account, Semaphore m) {
+        this.account = account;
         this.m = m;
     }
 
@@ -14,8 +14,8 @@ public class GoodGuy extends Thread implements Runnable {
         while (true){
             try {
                 m.acquire();
-                lovely.replenish(1000);
-                System.out.println(lovely.balance);
+                account.replenish(1000);
+                System.out.println(account.balance);
                 m.release();
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
